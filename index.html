@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máquina Dispensadora de Café</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a la Máquina Dispensadora de Café</h1>
+    </header>
+    <main class="content-wrapper">
+        <div class="left-side">
+            <img src="assets/nuevo.png" alt="Máquina de Café" class="coffee-machine">
+        </div>
+        <div class="right-side">
+            <div class="content">
+                <h2>Selecciona tu café</h2>
+                <form onsubmit="event.preventDefault(); hacerCafe()">
+                    <label for="tamanio">Tamaño del vaso:</label>
+                    <select id="tamanio">
+                        <option value="pequeno">Pequeño (3 Onzas)</option>
+                        <option value="mediano">Mediano (5 Onzas)</option>
+                        <option value="grande">Grande (7 Onzas)</option>
+                    </select>
+                    
+                    <label for="azucar">Cucharadas de azúcar:</label>
+                    <input type="number" id="azucar" min="0" value="1">
+                    
+                    <button type="submit" class="apple-button">Preparar Café</button>
+                </form>
+                <p id="mensaje"></p>
+            </div>
+        </div>
+        <audio id="sonido-cafe" src="Sound/beep.mp3"></audio>
+        <div id="granitos-container">
+            <img src="assets/imagen-de-granitocafe1.png" alt="Granito de Café" class="granito">
+        </div> <!-- Contenedor para los granitos de café -->
+    </main>
+</body>
+</html>
